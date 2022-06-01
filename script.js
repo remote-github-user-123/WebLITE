@@ -20,7 +20,7 @@ document.getElementById("compile").addEventListener('click', () => {
     document.body.append(scriptTag);
     console.log(scriptTag);
     scriptTag.innerHTML = js;
-    
+    document.body.removeChild(scriptTag.previousSibling);
     
 });
 
