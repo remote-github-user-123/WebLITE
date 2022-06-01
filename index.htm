@@ -4,23 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <link rel="stylesheet" href="styles.css">
-    <title>WebLiTE</title>
 </head>
 <body>
+
     <section id="canvas">
-        <div id="editor">
             <div id="buttons">
-                <button id="bhtml">HTML</button>
-                <button id="bcss">CSS</button>
-                <button id="bjs">JS</button>
+                <button class="btn active" id="bhtml">HTML</button>
+                <button class="btn" id="bcss">CSS</button>
+                <button class="btn" id="bjs">JS</button>
             </div>
-                <textarea id="inputh"></textarea>
-                <textarea id="inputc" class="hidden"></textarea>
-                <textarea id="inputj" class="hidden"></textarea>
-        
+            <div id="main">
+                <div id="editor">
+                    <textarea id="inputh"></textarea>
+                    <textarea id="inputc" class="hidden"></textarea>
+                    <textarea id="inputj" class="hidden"></textarea>
+            
+                </div>
+                <div id="output"></div>
             </div>
-            <div id="output"></div>
     </section>
+    
 </body>
 </html>
