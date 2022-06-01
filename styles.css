@@ -1,12 +1,16 @@
 #editor{
     float:left;
     width:50%;
+    height: 100vh;
+    border: 2px solid rgb(31, 27, 27);
 }
 #output{
     float:left;
     width:50%;
+    height: 100vh;
+    border: 2px solid rgb(31, 27, 27);
 }
 textarea{
-    height:60vh;
+    height: 90vh;
     resize: none;
 }
