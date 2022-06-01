@@ -2,11 +2,15 @@ let htmlEditor = document.getElementById("inputh");
 let cssEditor = document.getElementById("inputc");
 let jsEditor = document.getElementById("inputj");
 
-let editors = [htmlEditor, cssEditor, jsEditor];
+editorParent = document.getElementById("editor");
+let timeout;
 
-let currentEditor = htmlEditor;
 
-document.getElementById("compile").addEventListener('click', () => {
+
+const compile = () => {
+
+    console.log("compiling");
+
     let html = htmlEditor.value;
     let css = cssEditor.value;
     let js = jsEditor.value;
@@ -15,14 +19,61 @@ document.getElementById("compile").addEventListener('click', () => {
     html = html.slice(startIndex,endIndex);
     let outputDiv=document.getElementById("output");
     outputDiv.innerHTML=html+"<style>"+css+"</style>";
-    // document.getElementById("scr").innerHTML = js;
     let scriptTag = document.createElement("script");
     document.body.append(scriptTag);
     console.log(scriptTag);
     scriptTag.innerHTML = js;
     document.body.removeChild(scriptTag.previousSibling);
+}
+
+//On Landing
+let editors = [htmlEditor, cssEditor, jsEditor];
+let mode = localStorage.getItem("mode") || "bright";
+document.querySelector("link").setAttribute("href", `${mode}Styles.css`);
+htmlEditor.value = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <h1>Hello there</h1>
+  <img src="https://c.tenor.com/x8v1oNUOmg4AAAAd/rickroll-roll.gif"/>
+  
+</body>
+</html>`;
+compile();
+
+
+
+// document.getElementById("compile").addEventListener('click', () => {
+//     compile();
     
-});
+// });
+
+///////////////////////Debounce
+
+
+editorParent.addEventListener('keydown', () => {
+    if(timeout){
+        clearTimeout(timeout);
+        // return;   
+    }
+    timeout = setTimeout(compile, 1500);
+
+})
+
+
+/////////////////////////
+
+document.getElementById("mode").addEventListener("click", () => {
+    mode = mode === "bright" ? "dark" : "bright";
+    localStorage.setItem("mode", mode);
+    document.querySelector("link").setAttribute("href", `${mode}Styles.css`);
+})
 
 
 let btns = document.querySelectorAll('.btn');
