@@ -13,14 +13,40 @@
 
 textarea{
     height: 90vh;
+    width: 99%;
+    background: rgba(128, 128, 128, 0.493);
+    /* color : white; */
     resize: none;
+    outline: none;
 }
 
-#canvas{
+#main{
     display: flex;
     flex-direction: row;
 }   
 
 .hidden{
     display:none;
+}
+
+
+.btn{
+    background: rgb(9, 179, 99);
+    color: black;
+    border: none;
+    border-radius: 2em;
+    /* padding: 1em; */
+    width: 8vw;
+    height: 4vh;
+}
+
+
+.btn:hover{
+    opacity: 0.8;
+}
+
+.active{
+    background: rgb(155, 48, 155);
+    color: white;
+
 }
