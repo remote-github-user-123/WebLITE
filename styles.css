@@ -6,3 +6,7 @@
     float:left;
     width:50%;
 }
+textarea{
+    height:60vh;
+    resize: none;
+}
