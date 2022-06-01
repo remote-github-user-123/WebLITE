@@ -10,7 +10,17 @@
     height: 100vh;
     border: 2px solid rgb(31, 27, 27);
 }
+
 textarea{
     height: 90vh;
     resize: none;
+}
+
+#canvas{
+    display: flex;
+    flex-direction: row;
+}   
+
+.hidden{
+    display:none;
 }
