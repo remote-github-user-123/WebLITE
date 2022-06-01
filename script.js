@@ -6,7 +6,7 @@ document.getElementById("compile").addEventListener('click', () => {
     let endIndex = html.indexOf("</body>");
     html = html.slice(startIndex,endIndex);
     let outputDiv=document.getElementById("output");
-    outputDiv.innerHTML=html;
+    outputDiv.innerHTML=html+"<style>"+css+"</style>;
 });
 
 
